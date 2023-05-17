@@ -1,0 +1,29 @@
+# Note: there is no built-in support for nice groupings yet (gwyneth 20220112).
+#[Gin]
+ginMode = "debug"
+Host = "localhost"
+externalHost = "my.domain.tld"
+
+#[Misc]
+PDOPrefix = "sqlite"
+
+#[SecondLife]
+LSLSignaturePIN = "1234"
+
+#[Logging]
+Compress = true
+MaxBackups = 5
+Filename = "logs/plic.log"
+
+#[NewRelic]
+NewRelicAppName = "some name"
+NewRelicLicenseKey = "lots of hexadecimal characters"
+debugLevel = "none"
+
+#[Testing]
+restBotURL = "http://127.0.0.1:9080"	# URL to contact RESTbot.
+restBotRestBotPassword = "pass"	# Password for the RESTbot API service (default is sadly 'pass'...).
+restBotFirstName = "MyBot"		# Avatar first name.
+restBotLastName = "Resident"	# Avatar last name; defaults to "Resident" if empty.
+restBotPassword = "whatever"	# plaintext for now, because MD5 encryption is tricky to get to work under SL
+skipRestBotTest = false
