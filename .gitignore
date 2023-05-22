@@ -41,7 +41,7 @@ package-lock.json
 
 # Our stuff that we want to exclude
 *.ini
-plic.service
+goans.service
 .env
 
 # Dependency directories (remove the comment below to include it)

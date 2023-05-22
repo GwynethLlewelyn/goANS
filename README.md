@@ -15,7 +15,19 @@ Tested under Go 1.20. If you don't have it, nor use it, this is hardly the place
 
 Copy `config.ini.sample` to `config.ini`, fill with your details, and you're ready to go.
 
+Mind you, everything will be ignored (for now).
+
 You will probably need to get the Merchant Salt Code first. Just type your processor URL on the right spot on the Merchant backoffice, and LL will show you yours.
+
+## Configuring your server (OS & Web)
+
+If your operating system uses `systemd` you can use the template under `scripts/goans.service.sample` as inspiration. Figuring everything out remains as an exercise for the user.
+
+If your operating system uses anything else besides `systemd` (such as macOS, which uses `launchd`, or Windows which uses... whatever Windows uses), you're out of luck. For now at least, this has only been tested under Linux (x86 & ARM).
+
+goANS uses port number 9045 by default (well, 904n5 is not a valid port number, for those of you who speak leet). It happened to be unused on my system. I then encapsulate it under `nginx` — a basic setup is shown under `scripts/nginx-snippet.conf`.
+
+To-do: use FastCGI instead/alternatively (mostly to avoid using a preciously scarce Internet port). Or figure out how to get Go to use a Unix socket instead (that should be possible).
 
 ## License
 

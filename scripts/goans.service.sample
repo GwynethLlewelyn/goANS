@@ -1,0 +1,19 @@
+; goANS service file for systemd-based operating systems
+;
+[Unit]
+Description=goANS - Second Life Marketplace Automatic Notification System
+After=network.target
+
+[Service]
+Type=simple
+User=<YOUR USERNAME>
+Group=<YOUR USERGROUP>
+;StandardInput=socket
+;StandardOutput=null
+;StandardError=syslog
+WorkingDirectory=<PATH TO WHERE YOU RUN THIS APP FROM>
+Environment=USER=<YOUR USERNAME> HOME=<PATH TO WHERE YOU RUN THIS APP FROM>
+ExecStart=<PATH TO WHERE YOU RUN THIS APP FROM>/goans
+
+[Install]
+WantedBy=multi-user.target
